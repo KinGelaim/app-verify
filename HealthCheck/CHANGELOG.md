@@ -7,6 +7,7 @@
 1) Вынести Interop из проекта (InteropLibrary?)
 2) Вынести DateTimeExtensions из проекта в Interop (InteropLibrary?)
 3) Добавить IClock в проект
+4) Настроить проект на проверку БД
 
 ## [1.0.0-alpha1] - 2024-06-08
 
