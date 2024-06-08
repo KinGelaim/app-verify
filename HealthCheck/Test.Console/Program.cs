@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using HealthCheck.Models;
+﻿using HealthCheck.Models;
 using HealthCheck.Modules.Extensions;
 using HealthCheck.Modules.Kestrel;
 
