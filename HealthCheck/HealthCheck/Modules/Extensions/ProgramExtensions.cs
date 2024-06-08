@@ -2,6 +2,7 @@
 using HealthCheck.Interfaces;
 using HealthCheck.Models;
 using HealthCheck.Models.DataBase;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using System.Reflection;
@@ -162,10 +163,35 @@ public static class WebApplicationBuilderExtension
     public static IHealthChecksBuilder AutoDiscoverChecks(this IHealthChecksBuilder builder, IServiceCollection services) => builder.GetChecksFromCurrentAssembly(services);
 
     /// <summary>
+    /// Автоматически найти все хелсчеки для текущей сборки в применении к WebApplicationBuilder
+    /// </summary>
+    /// <param name="builder">Билдер</param>
+    /// <param name="services">Сервисы (для DI)</param>
+    public static IHealthChecksBuilder AutoDiscoverChecks(this WebApplicationBuilder builder, IServiceCollection services)
+    {
+        var checkBuilder = builder.Services.AddHealthChecks();
+
+        return checkBuilder.GetChecksFromCurrentAssembly(services);
+    }
+
+    /// <summary>
     /// Автоматически найти все хелсчеки для сборки, содержащей тип Т. Применяется к IHealthChecksBuilder
     /// </summary>
     /// <typeparam name="T">Тип, лежащий в сборке, где надо найти хелсчеки</typeparam>
     /// <param name="builder">Сам билдер</param>
     /// <param name="services">Сервисы (для DI)</param>
     public static IHealthChecksBuilder AutoDiscoverChecks<T>(this IHealthChecksBuilder builder, IServiceCollection services) => builder.GetChecksFromGivenAssembly<T>(services);
+
+    /// <summary>
+    /// Автоматически найти все хелсчеки для сборки, содержащей тип Т. Применяется к WebApplicationBuilder
+    /// </summary>
+    /// <typeparam name="T">Тип, лежащий в сборке, где надо найти хелсчеки</typeparam>
+    /// <param name="builder">Сам билдер</param>
+    /// <param name="services">Сервисы (для DI)</param>
+    public static IHealthChecksBuilder AutoDiscoverChecks<T>(this WebApplicationBuilder builder, IServiceCollection services)
+    {
+        var checkBuilder = builder.Services.AddHealthChecks();
+
+        return checkBuilder.GetChecksFromGivenAssembly<T>(services);
+    }
 }
