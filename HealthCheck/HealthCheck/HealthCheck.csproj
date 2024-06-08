@@ -4,7 +4,13 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageIcon>health.png</PackageIcon>
+    <ApplicationIcon>Resources\health.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\health.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="linq2db" Version="5.4.1" />
@@ -13,6 +19,13 @@
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions" Version="8.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\health.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

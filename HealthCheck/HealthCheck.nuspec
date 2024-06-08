@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+	<metadata>
+		<id>VDKN.HealthCheck.Net.Core</id>
+		<version>1.0.0-alpha1</version>
+		<title>HealthCheck for .NET Core</title>
+		<authors>KinGelaim</authors>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<license type="expression">MIT</license>
+		<icon>health.png</icon>
+		<releaseNotes>Первая версия библиотеки проверки работоспособности приложения .net</releaseNotes>
+		<description>HealthCheck .net core</description>
+		<copyright>Copyright ©2024 KinGelaim</copyright>
+		<tags>health check healthcheck</tags>
+		<dependencies>
+			<group targetFramework="net8.0">
+				<dependency id="System.Data.SqlClient" version="4.8.5" />
+				<dependency id="Npgsql" version="7.0.6" />
+			</group>
+		</dependencies>
+	</metadata>
+	<files>		
+		<file src="..\HealthCheck\bin\Release\net8.0\*.dll" target="lib\net8.0" />
+		<file src="..\HealthCheck\bin\Release\net8.0\*.pdb" target="lib\net8.0" />
+		
+		<file src="..\HealthCheck\Resources\health.png" target="" />
+	</files>
+</package>
