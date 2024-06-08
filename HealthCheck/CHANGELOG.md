@@ -2,6 +2,12 @@
 
 Описания изменений, который были внесены в библиотеку "HealthCheck" (HealthCheck)
 
+## [Unreleased]
+
+1) Вынести Interop из проекта (InteropLibrary?)
+2) Вынести DateTimeExtensions из проекта в Interop (InteropLibrary?)
+3) Добавить IClock в проект
+
 ## [1.0.0-alpha1] - 2024-06-08
 
 1) Добавлена предварительная версия библиотеки хелс чека
